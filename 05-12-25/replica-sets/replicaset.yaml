@@ -1,4 +1,7 @@
 
+# kubectl get replicaset (rs)
+# kubectl get pods
+
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
