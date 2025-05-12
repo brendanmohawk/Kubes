@@ -1,7 +1,10 @@
 
-apiVersion:
-kind: 
-metadata:
-  name: 
+# Service - Stable way to connect to a group of pods.
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
 spec: 
+  type: 
+  ports: 
