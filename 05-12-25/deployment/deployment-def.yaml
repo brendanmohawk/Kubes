@@ -1,11 +1,12 @@
-# kubectl create -f deployment-def.yaml
-# kubectl get deployments
-# kubectl describe deployment myapp-deployment
-
-# kubectl get all
-
-# kubectl apply -f deployment.yml
-# kubectl set image deployment/deployment.yml nginx-container=nginx:1.9.1
+# Create                                                kubectl create -f deployment-def.yaml
+# Get                                                   kubectl get deployments
+#                                                       kubectl get all
+#                                                       kubectl describe deployment deployment-def
+# Update                                                kubectl apply -f deployment-def.yml
+#                                                       kubectl set image deployment/deployment-def nginx=nginx:1.9.1
+# Status                                                kubectl rollout status deployment/deployment-def
+#                                                       kubectl rollout history deployment/deployment-def
+# Rollback                                              kubectl rollout undo deployment/deployment-def
 
   apiVersion: apps/v1
   kind: Deployment
