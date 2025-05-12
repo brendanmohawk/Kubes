@@ -1,6 +1,11 @@
 
-apiVersion: 
-kind: 
-metadata: 
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: 
+  labels: 
+    app: 
 
 spec: 
+  selector: 
+    matchLabels: 
