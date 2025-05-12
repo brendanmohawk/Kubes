@@ -1,8 +1,25 @@
+# kubectl create -f deployment-def.yaml
+# kubectl get deployments
 
-  apiVersion: 
-  kind: 
+  apiVersion: apps/v1
+  kind: Deployment
   metadata: 
-    name: 
+    name: myapp-deployment
     labels: 
-
-spec: 
+      app: myapp
+      type: frontend
+spec:
+  template: 
+    metadata: 
+      name: myapp-prod
+      labels: 
+        app: myapp
+        type: frontend
+    spec:
+      containers: 
+        - name: nginx-container
+          image: nginx
+  replicas: 3
+  selector:
+    matchLabels: 
+      type: frontend
