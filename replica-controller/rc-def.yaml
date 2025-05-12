@@ -15,7 +15,8 @@ spec:                             # Defines whats inside the object being create
       labels:
         app: myapp
         type: frontend
-      spec: 
+      spec:                       # Pod
         containers: 
           - name: nginx-container
             image: nginx
+  replicas: 3
