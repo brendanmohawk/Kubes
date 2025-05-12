@@ -1,10 +1,13 @@
 
 # Service - Stable way to connect to a group of pods.
 
-apiVersion: v1
-kind: Service
+apiVersion: v1                                                        # API version used for the Service
+kind: Service                                                         # Specifies Service object
 metadata:
-  name: myapp-service
+  name: myapp-service                                                 # Name of the service
 spec: 
-  type: 
+  type: NodePort                                                      # Exposes service on each Nodes IP at a static port
   ports: 
+    - targetPort: 80                                                   # Port on the pod the service should forward traffic to
+      port: 80                                                         # Port on the service that is exposed inside the cluster
+      nodePort: 30008                                                  # Port on the Node where the service is exposed
