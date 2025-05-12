@@ -20,15 +20,6 @@ spec:
     spec: 
       containers: 
         - name: voting-app
-          image: kodekloud/examplevotingapp_
+          image: kodekloud/examplevotingapp_vote:v1
           ports: 
             - containerPort: 80
-  
-
-  
-  ports: 
-    - port: 6379
-      targetPort: 6379
-  selector: 
-    name: redis-pod
-    app: demo-voting-app
