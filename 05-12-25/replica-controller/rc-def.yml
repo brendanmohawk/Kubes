@@ -1,0 +1,22 @@
+
+# Replica Controller - Ensures that a specific number of identical pods are running at any given time.
+
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: myapp-rc
+  labels: 
+    app: myapp
+    type: frontend
+spec:                             # Defines whats inside the object being created
+  template: 
+    metadata: 
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: frontend
+      spec:                       # Pod
+        containers: 
+          - name: nginx-container
+            image: nginx
+  replicas: 3
