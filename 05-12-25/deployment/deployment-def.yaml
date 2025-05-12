@@ -4,6 +4,9 @@
 
 # kubectl get all
 
+# kubectl apply -f deployment.yml
+# kubectl set image deployment/deployment.yml nginx-container=nginx:1.9.1
+
   apiVersion: apps/v1
   kind: Deployment
   metadata: 
