@@ -1,14 +1,22 @@
+# YAML File defining a Pod - the most basic deployable unit in Kubernetes
+# Brendan Dileo, May 2025 - Educational
+
+# API Version
 apiVersion: v1
+# Kind of Kubernetes object
 kind: Pod
+# Metadata about the Pod
 metadata: 
-  name: myapp-pod
+  name: myapp-pod                            # Pod Name
   labels:
-    env: development
+    env: development                        # Environment Label
+    
+# Pod Behaviour
 spec:
   containers: 
-    - name: nginx
-      image: nginx
+    - name: nginx                          # Container name
+      image: nginx                         # Docker image to use
 
-      env: 
+      env:                                 # Env vars for the container
       - name: POD_PSWD
         value: mySecretPassword
