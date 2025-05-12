@@ -11,3 +11,6 @@ spec:
     - targetPort: 80                                                   # Port on the pod the service should forward traffic to
       port: 80                                                         # Port on the service that is exposed inside the cluster
       nodePort: 30008                                                  # Port on the Node where the service is exposed
+  selector:                                                            # Link service to pod
+    app: myapp
+    type: frontend
