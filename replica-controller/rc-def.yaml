@@ -1,0 +1,21 @@
+
+# ReplicaSet - ensures specific number of identical pods are running at all times
+
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: myapp-rc
+  labels: 
+    app: myapp
+    type: frontend
+spec:                             # Defines whats inside the object being created
+  template: 
+    metadata: 
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: frontend
+      spec: 
+        containers: 
+          - name: nginx-container
+            image: nginx
