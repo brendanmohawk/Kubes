@@ -35,3 +35,10 @@ services:
     networks:
       - mcnet
     restart: unless-stopped
+    
+networks:
+  mcnet:
+    driver: bridge
+volumes:
+  db_data:
+
