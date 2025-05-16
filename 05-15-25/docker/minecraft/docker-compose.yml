@@ -1,0 +1,19 @@
+# Creds to https://github.com/docker/awesome-compose/blob/master/minecraft/compose.yaml
+
+services:
+  minecraft:
+    build: .
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"                    
+      TYPE: "PAPER"                   
+      MEMORY: "1.5G"                  
+      ENABLE_RCON: "true"             
+      RCON_PASSWORD: "admin"
+    volumes:
+      - ./minecraft_data:/data       
+    deploy:
+      resources:
+        limits:
+          memory: 1.5G                 # Limit container memory usage
