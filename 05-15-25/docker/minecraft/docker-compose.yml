@@ -5,11 +5,16 @@ services:
     build: .
     ports:
       - "25565:25565"
+    volumes: 
+      - ./minecraft_data:/data
+    networks: 
+      - mcnet
+    restart: unless-stopped
     environment:
       EULA: "TRUE"                    
-      TYPE: "PAPER"                   
-      MEMORY: "1.5G"                  
-      ENABLE_RCON: "true"             
+      TYPE: "PAPER"                   # PaperMc          
+      MEMORY: "1.5G"                  # Is this enough?????               
+      ENABLE_RCON: "true"             # Remote console access (should be false but leave for test)       
       RCON_PASSWORD: "admin"
     volumes:
       - ./minecraft_data:/data       
