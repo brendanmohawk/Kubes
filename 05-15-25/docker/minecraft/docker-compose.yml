@@ -25,3 +25,13 @@ services:
   db:
     image: mariadb
     container_name: mc-database
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: minecraft
+      MYSQL_USER: mcuser
+      MYSQL_PASSWORD: mcpass
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mcnet
+    restart: unless-stopped
