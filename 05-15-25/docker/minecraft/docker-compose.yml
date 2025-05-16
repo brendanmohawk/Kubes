@@ -19,32 +19,9 @@ services:
     volumes:
       - ./minecraft_data:/data       
     deploy:
-      resources:# Credits: https://github.com/docker/awesome-compose/blob/master/minecraft/compose.yaml
-
-version: "3.8"
-
-services:
-  minecraft:
-    build: .
-    container_name: minecraft-server
-    ports:
-      - "25565:25565"                   # Minecraft port
-    volumes:
-      - ./minecraft_data:/data         # Server data persists on host
-    networks:
-      - mcnet
-    restart: unless-stopped
-    environment:
-      EULA: "TRUE"                     # You must accept the Minecraft EULA
-      TYPE: "PAPER"                    # Use PaperMC for plugin support and performance
-      MEMORY: "1.5G"                   # You can increase this depending on server use
-      ENABLE_RCON: "true"             # Enable remote console access
-      RCON_PASSWORD: "admin"          # Change this in production
-    deploy:
       resources:
-        limits:
-          memory: 1.5G                 # Container hard memory cap
-
+        limits: 
+          memory: "1.5G"
   db:
     image: mariadb
     container_name: mc-database
